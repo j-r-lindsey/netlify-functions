@@ -1,0 +1,19 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "netlify function experimentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-r-lindsey/netlify-functions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-r-lindsey/netlify-functions/issues"
+  },
+  "homepage": "https://github.com/j-r-lindsey/netlify-functions#readme"
+}
