@@ -1,5 +1,2 @@
 # netlify-functions
 netlify-functions
-
-# token
-d90e35dac37d875eb52f4dc265173faf985447554475a5334108bff55087355d
