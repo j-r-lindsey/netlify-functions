@@ -1,5 +1,6 @@
 [build]
 functions = ".netlify/functions"
+command = "cd .netlify/functions/save-car-path; npm install"
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
