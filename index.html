@@ -27,6 +27,8 @@
 
         <script>
 
+            const PIXELS_PER_MILLISECOND = 500 / 30000; // 30 seconds to cross full image range
+
             var map = {};
             var orientation = "N"
             var position = [250,250];
@@ -53,7 +55,7 @@
                 position = destination;                
             }
 
-            function reverse(s,d) {
+            function backward(s,d) {
                 forward(s, -d);
             }
 
@@ -91,27 +93,41 @@
                 }                  
             }
 
-            function reset() {
+            function reset(s) {
+                s.clear();
                 orientation = "N"
-                position = [150,150];                
+                position = [250,250];                
             }
 
             function getSvg(index) {
                 let data = map[index];
                 console.log(data);
-                reset();
                 s = Snap("#routeDrawing");
-                forward(s,20);
-                right();
-                forward(s,30);
-                left();
-                forward(s,10);
-                reverse(s,50);
+                reset(s);
+                if (data.movements) {                    
+                    for (movement of data.movements) {
+                        let distance = movement.duration * PIXELS_PER_MILLISECOND;
+                        switch (movement.direction) {                        
+                            case "forward":
+                                forward(s,distance);
+                                break;
+                            case "backward":
+                                backward(s,distance);
+                                break;                            
+                            case "left":
+                                left(s,distance);
+                                break;                            
+                            case "right":
+                                right(s,distance);
+                                break;
+                        }
+                    }
+                }
                 return s;
             }
 
             $.ajax({
-                url: "/.netlify/functions/save-car-path",
+                url: "https://suspicious-agnesi-088aa5.netlify.app/.netlify/functions/save-car-path",
                 success: function(data) {
                     if (data) {
                         let json = JSON.parse(data);

@@ -1,0 +1,44 @@
+{
+	"movements": [
+		{
+			"direction": "forward",
+			"duration": 9000
+		},
+		{
+			"direction": "right",
+			"duration": 750
+		},
+		{
+			"direction": "backward",
+			"duration": 1000
+		},
+		{
+			"direction": "right",
+			"duration": 750
+		},
+		{
+			"direction": "forward",
+			"duration": 4000
+		},
+		{
+			"direction": "left",
+			"duration": 750
+		},
+		{
+			"direction": "forward",
+			"duration": 7000
+		},
+		{
+			"direction": "left",
+			"duration": 750
+		},
+		{
+			"direction": "forward",
+			"duration": 4500
+		},
+		{
+			"direction": "backward",
+			"duration": 3000
+		}																		
+	]	
+}
